@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: scamdb
+    environment:
+      POSTGRES_USER: scamuser
+      POSTGRES_PASSWORD: scampass
+      POSTGRES_DB: scamintel
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
